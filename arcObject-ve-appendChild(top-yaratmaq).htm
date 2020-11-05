@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>topu createElement le ve objectle yaratmaq </title>
+		<style>
+			body{display: flex; background:silver;}
+			#sahe{width: 800px; height: 600px; margin: auto;  background: #fff; position: relative;}
+		  #sahe>div{position: absolute;}
+		</style>
+	</head>
+	<body>
+	
+	<script>
+		const sahe = document.createElement('div');
+			  sahe.setAttribute('id',"sahe");
+		document.body.appendChild(sahe);
+		createBall("ball");
+		let ball = {
+					elem:document.getElementById('ball'),
+					bgColor:"red",
+					width:20,
+					height:20,
+					top:0.1,
+					left:0.1
+		}
+		showBall();
+		function createBall(name){
+			let div = document.createElement('div');
+			div.setAttribute('id',name);
+			sahe.appendChild(div);
+		}
+		function showBall(){
+			ball.elem.style.width = ball.width + "px";
+			ball.elem.style.height = ball.height + "px";
+			ball.elem.style.backgroundColor = ball.bgColor;
+			ball.elem.style.borderRadius = "50%";
+			ball.elem.style.top = ball.top + "px";
+			ball.elem.style.left = ball.left + "px";
+		}
+	</script>
+	</body>
+</html>
